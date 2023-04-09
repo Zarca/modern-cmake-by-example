@@ -5,3 +5,4 @@ target_include_directories(answer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(answer PRIVATE wolfram)
 INSTALL(TARGETS answer 
         ARCHIVE DESTINATION lib_static)
+INSTALL(DIRECTORY include/ DESTINATION include/)  

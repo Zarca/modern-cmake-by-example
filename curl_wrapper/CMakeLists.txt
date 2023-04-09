@@ -4,3 +4,4 @@ target_include_directories(curl_wrapper
                            PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 INSTALL(TARGETS curl_wrapper
 LIBRARY DESTINATION lib)
+INSTALL(DIRECTORY include/ DESTINATION include/)  
