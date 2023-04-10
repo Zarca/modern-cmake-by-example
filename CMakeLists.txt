@@ -15,6 +15,11 @@ add_subdirectory(wolfram)
 add_executable(answer_app main.cpp)
 target_link_libraries(answer_app answer)
 
+#test ; use `make test` to check the build result, both elf files and shell scripts can be tested 
+ADD_TEST(test_1 ${PROJECT_SOURCE_DIR}/test/test.sh)
+#ADD_TEST(test_2 ${PROJECT_BINARY_DIR}/bin/answer_app) # 交互式程序似乎无法通过测试
+ENABLE_TESTING()
+
 INSTALL(TARGETS answer_app
 RUNTIME DESTINATION bin
 )
@@ -24,3 +29,4 @@ INSTALL(FILES _COPYRIGHT README.md DESTINATION share/doc/cmake/app)
 INSTALL(PROGRAMS run_app.sh DESTINATION bin)
 
 INSTALL(DIRECTORY doc/ DESTINATION share/doc/cmake/app)
+
