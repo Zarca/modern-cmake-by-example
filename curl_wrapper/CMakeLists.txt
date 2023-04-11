@@ -5,4 +5,4 @@ target_include_directories(curl_wrapper
 target_link_libraries(curl_wrapper curl)
 INSTALL(TARGETS curl_wrapper
 LIBRARY DESTINATION lib)
-INSTALL(DIRECTORY include/ DESTINATION include/)  
+INSTALL(DIRECTORY include/curl_wrapper DESTINATION include/)  

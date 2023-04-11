@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/install_dir")
+  set(CMAKE_INSTALL_PREFIX "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/build/install_dir/")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,7 +45,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       -delete_rpath "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/build/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/answer_app")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -add_rpath "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/install_dir/lib"
+      -add_rpath "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/build/install_dir//lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/answer_app")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" -u -r "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/answer_app")
@@ -54,7 +54,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/cmake/app" TYPE FILE FILES
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc" TYPE FILE FILES
     "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/_COPYRIGHT"
     "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/README.md"
     )
@@ -65,7 +65,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/cmake/app" TYPE DIRECTORY FILES "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/doc/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/" TYPE DIRECTORY FILES "/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/doc/")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

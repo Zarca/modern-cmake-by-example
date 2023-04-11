@@ -5,4 +5,4 @@ target_include_directories(wolfram PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(wolfram PRIVATE curl_wrapper)
 INSTALL(TARGETS wolfram
 ARCHIVE DESTINATION lib_static)
-INSTALL(DIRECTORY include/ DESTINATION include/)  
+INSTALL(DIRECTORY include/wolfram DESTINATION include/)  
