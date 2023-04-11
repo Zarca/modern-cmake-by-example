@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../answer/include/answer/answer.hpp
+string
+-
+
+/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/main.cpp
+iostream
+-
+answer/answer.hpp
+-
+

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../answer/include/answer/answer.hpp
+string
+-
+
+../wolfram/include/wolfram/alpha.hpp
+string
+-
+
+/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/answer/answer.cpp
+answer/answer.hpp
+/Users/zarca/Desktop/Projects/git/modern-cmake-by-example/answer/answer/answer.hpp
+wolfram/alpha.hpp
+-
+
