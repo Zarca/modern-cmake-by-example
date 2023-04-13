@@ -14,7 +14,15 @@ add_subdirectory(answer)
 add_subdirectory(curl_wrapper)
 add_subdirectory(wolfram)
 
+#配置项
+option(USE_TEST "User defined cmake config variable" ON)
+configure_file(Config.h.in Config.h)
+
+
 add_executable(answer_app main.cpp)
+# 这个cmake配置头文件是生成在Build路径中
+target_include_directories(answer_app PUBLIC "${PROJECT_BINARY_DIR}" )
+
 target_link_libraries(answer_app answer)
 
 #test ; use `make test` to check the build result, both elf files and shell scripts can be tested 
@@ -31,4 +39,6 @@ INSTALL(FILES _COPYRIGHT readme.md DESTINATION share/doc/)
 INSTALL(PROGRAMS run_app.sh DESTINATION bin)
 
 INSTALL(DIRECTORY doc/ DESTINATION share/doc/)
+
+INSTALL(FILES ${PROJECT_BINARY_DIR}/Config.h DESTINATION include/)
 
