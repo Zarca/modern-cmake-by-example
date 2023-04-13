@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "options":{
+        "cwd": "${workspaceFolder}/build"
+    },
+    "tasks": [
+         {
+            "label": "cmake",
+            "command": "cmake .. -DCMAKE_BUILD_TYPE=Debug",
+            "type": "shell"
+        },
+        {
+            "label": "make",
+            "command": "make ",
+            "type": "shell"
+        },
+        {
+            "label": "build",
+            "dependsOrder": "sequence", //default the task dependency is executed in parallel
+            "dependsOn": ["cmake", "make"],
+            "command": "echo the build job is done",
+            "type": "shell"
+        }
+    ]
+  
+}
+
